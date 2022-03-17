@@ -5,13 +5,13 @@ const LSTodosKey = "todos";
 const useTodos = () => {
   const [todos, setTodos] = useState([]);
 
-  const createTodo = async (text, topic, image, input, tags) => {
+  const createTodo = async (text, topic, image,  tags) => {
     const newTodo = {
       id: Date.now(),
       text,
       topic,
       image,
-      input,
+     
       tags,
     };
 
