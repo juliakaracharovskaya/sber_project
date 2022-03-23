@@ -8,8 +8,9 @@ const TodoList = () => {
 
 
 	return(
-		<div >
-			 <ul className="list-group">
+		
+			<div className="row row-cols-3 mx-5 " >
+			 
 				{todos.length ? todos.map((todo, i)=> {
 						return(
 					<TodoItem 
@@ -24,8 +25,8 @@ const TodoList = () => {
 						)
 					}) :<p>List empty...</p>
 				}
-				</ul>
-		</div>
+			</div>	
+	
 	   )
 	}
 

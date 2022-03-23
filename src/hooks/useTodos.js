@@ -11,10 +11,8 @@ const useTodos = () => {
       text,
       topic,
       image,
-     
       tags,
     };
-
     setTodos((prev) => [...prev, newTodo]);
   };
 
@@ -24,7 +22,7 @@ const useTodos = () => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
 
-  const clearAllTodos = () => {
+  const clearAllPost = () => {
     setTodos([]);
   };
 
@@ -44,7 +42,7 @@ const useTodos = () => {
 		todos,
 		createTodo,
 		deleteTodo,
-		clearAllTodos,
+		clearAllPost,
 	}
 };
 

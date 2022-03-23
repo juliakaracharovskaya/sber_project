@@ -1,7 +1,8 @@
 import { useContext, useState } from "react"
 import { TodoListContext } from "../../../contexts/TodoListContext"
 
-const Form = () => {
+const PostInput = () => {
+
   const [topic, setTopic] = useState("")
   const [image, setImage] = useState("")
   const [input, setInput] = useState("")
@@ -35,16 +36,17 @@ const Form = () => {
       <div className="mb-3 d-flex align-items-center " >
       <input
           type="text"
+          name="name"
           className="form-control  bg-danger p-2 text-dark bg-opacity-10 m-1"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="Text here topic..."
           value={topic}
           onChange={changeTopic}
-        />
-      
+        />      
       <input
           type="text"
+          name="pic"
           className="form-control  bg-danger p-2 text-dark bg-opacity-10 m-1"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
@@ -52,9 +54,9 @@ const Form = () => {
           value={image}
           onChange={changeImage}
         />
-
         <input
           type="text"
+          name="text"
           className="form-control  bg-danger p-2 text-dark bg-opacity-10 m-1"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
@@ -64,16 +66,16 @@ const Form = () => {
         />
           <input
           type="text"
+          name="tag"
           className="form-control bg-danger p-2 text-dark bg-opacity-10 m-1"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="Text here your tag..."
           value={tags}
           onChange={changeTags}
-        />
-        
+        />        
       </div>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <div className="d-grid gap-2 d-md-flex justify-content-md-end">
       <button type="submit" className="btn btn-outline-danger  ">
         Add Post
       </button>
@@ -82,4 +84,5 @@ const Form = () => {
   )
 }
 
-export default Form;
+export default  PostInput 
+    

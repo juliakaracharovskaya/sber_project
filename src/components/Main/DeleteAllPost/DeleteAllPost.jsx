@@ -1,10 +1,11 @@
-import { TodoListContext } from "../../contexts/TodoListContext"
 import { useContext } from "react"
+import { TodoListContext } from "../../../contexts/TodoListContext"
 
-const Footer = () => {
-    const { clearAllTodos} = useContext(TodoListContext)
 
-	const deleteAllHandler = () => clearAllTodos()
+const DeleteAllPost = () => {
+ const {clearAllPost} = useContext(TodoListContext)
+
+	const deleteAllHandler = () => clearAllPost()
 
     return(
         <footer className='d-flex mt-5 justify-content-center' >
@@ -12,4 +13,4 @@ const Footer = () => {
         </footer>
     )
 }
-export default Footer
+export default DeleteAllPost
