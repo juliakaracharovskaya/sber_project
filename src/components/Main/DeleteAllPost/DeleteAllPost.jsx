@@ -1,9 +1,10 @@
 import { useContext } from "react"
-import { TodoListContext } from "../../../contexts/TodoListContext"
+import { PostListContext } from "../../../contexts/PostListContext"
+
 
 
 const DeleteAllPost = () => {
- const {clearAllPost} = useContext(TodoListContext)
+ const {clearAllPost} = useContext(PostListContext)
 
 	const deleteAllHandler = () => clearAllPost()
 

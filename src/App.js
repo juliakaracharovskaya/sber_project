@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
-import TodoListProvider from "./contexts/TodoListContext";
+import PostListProvider from "./contexts/PostListContext";
 
 import {
   BrowserRouter,
@@ -16,7 +16,7 @@ import DetailPage from "./components/Main/DetailPage/DetailPage";
 
 function App() {
   return (
-    <TodoListProvider>
+    <PostListProvider>
       <div className="container py-5">
       <BrowserRouter>
         <Header />
@@ -31,7 +31,7 @@ function App() {
       </BrowserRouter>
         
       </div>
-    </TodoListProvider>
+    </PostListProvider>
 
   )
 }

@@ -1,49 +1,68 @@
 import { useEffect, useState } from "react";
 
-const LSTodosKey = "todos";
+const LSPostsKey = "posts";
 
-const useTodos = () => {
-  const [todos, setTodos] = useState([]);
+const usePosts = () => {
+  const [posts, setPosts] = useState([]);
 
-  const createTodo = async (text, topic, image,  tags) => {
-    const newTodo = {
+  const createPost = async (input, topic, image,  tags) => {
+    const newPost = {
       id: Date.now(),
-      text,
+      input,
       topic,
       image,
       tags,
     };
-    setTodos((prev) => [...prev, newTodo]);
+    setPosts((prev) => [...prev, newPost]);
   };
 
 
 
-  const deleteTodo = (id) => {
-    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  const deletePost = (id) => {
+    setPosts((prev) => prev.filter((post) => post.id !== id));
   };
 
   const clearAllPost = () => {
-    setTodos([]);
+    setPosts([]);
   };
 
+  const [viewModal, setViewModal] = useState(false)
+   
+
+  const openModal = () => {
+    setViewModal(true)
+  }
+
+  const closeModal = () => {
+    setViewModal(false)
+  }
+
+  
   useEffect(() => {
-    const dataFromLS = localStorage.getItem(LSTodosKey);
+    const dataFromLS = localStorage.getItem(LSPostsKey);
     if (dataFromLS) {
-      setTodos(JSON.parse(dataFromLS));
+      setPosts(JSON.parse(dataFromLS));
     } 
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(LSTodosKey, JSON.stringify(todos));
-  }, [todos]);
+    localStorage.setItem(LSPostsKey, JSON.stringify(posts));
+  }, [posts]);
+  
+
+
 
 
 	return {
-		todos,
-		createTodo,
-		deleteTodo,
+		posts,
+		createPost,
+		deletePost,
 		clearAllPost,
+    LSPostsKey,
+    openModal,
+    closeModal,
+    viewModal
 	}
 };
 
-export default useTodos
+export default usePosts

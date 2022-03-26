@@ -1,5 +1,6 @@
 import { useContext, useState } from "react"
-import { TodoListContext } from "../../../contexts/TodoListContext"
+import { PostListContext } from "../../../contexts/PostListContext"
+
 
 const PostInput = () => {
 
@@ -8,7 +9,7 @@ const PostInput = () => {
   const [input, setInput] = useState("")
   const [tags, setTags] = useState("")
 
-  const { createTodo } = useContext(TodoListContext)
+  const { createPost } = useContext(PostListContext)
   
   const changeTopic = (e) => setTopic(e.target.value)
   const changeImage = (e) => setImage(e.target.value)
@@ -23,7 +24,7 @@ const PostInput = () => {
     const imageTrim = image.trim()
     const tagsTrim = tags.trim()
     if (inputTrim && topicTrim && imageTrim && tagsTrim) {
-      createTodo(inputTrim, topicTrim, imageTrim, tagsTrim)
+      createPost(inputTrim, topicTrim, imageTrim, tagsTrim)
       setTopic('')
       setImage('')
       setInput('')

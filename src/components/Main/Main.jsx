@@ -1,6 +1,9 @@
 import DeleteAllPost from "./DeleteAllPost/DeleteAllPost"
 import PostInput from "./PostInput/PostInput"
-import TodoList from "./TodoList/TodoList"
+import PostList from "./PostList/PostList"
+
+
+
 
 const Main = () => {
 
@@ -9,9 +12,9 @@ const Main = () => {
 
 	return (
 	<>
-	<PostInput />
+	<PostInput/>
 	<hr />
-	<TodoList />
+	<PostList/>
 	<DeleteAllPost />
 	</>
 	)
