@@ -5,9 +5,9 @@ import usePosts from "../hooks/useTodos";
 const PostListContext = createContext();
 
 const PostListProvider = ({ children }) => {
-  const { posts, createPost,  deletePost, clearAllPost, LSPostsKey, openModal, closeModal, viewModal} =
+   const { posts, createPost,  deletePost, clearAllPost, LSPostsKey, openModal, closeModal, viewModal} =
     usePosts();
-
+   
   return (
     <PostListContext.Provider
       value={{ posts, createPost, deletePost, clearAllPost, LSPostsKey, openModal, closeModal, viewModal}}

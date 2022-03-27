@@ -40,6 +40,7 @@ const usePosts = () => {
   
   useEffect(() => {
     const dataFromLS = localStorage.getItem(LSPostsKey);
+    
     if (dataFromLS) {
       setPosts(JSON.parse(dataFromLS));
     } 
@@ -50,18 +51,15 @@ const usePosts = () => {
   }, [posts]);
   
 
-
-
-
 	return {
 		posts,
 		createPost,
 		deletePost,
 		clearAllPost,
-    LSPostsKey,
     openModal,
     closeModal,
-    viewModal
+    viewModal,
+    LSPostsKey, 
 	}
 };
 

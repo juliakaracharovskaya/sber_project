@@ -14,7 +14,7 @@ function ModalInput({ onSubmit, topic = '', image = '', input = '', tags = '' })
   const {posts} = useContext(PostListContext)
   const {id} = useParams()
   const { closeModal} = useContext(PostListContext)
-  const {LSPostkey} = useContext(PostListContext)
+  const {LSPostsKey} =  useContext(PostListContext)
 
   const indexPost = posts.findIndex((post) => post.id === +id)
 
@@ -43,8 +43,8 @@ function ModalInput({ onSubmit, topic = '', image = '', input = '', tags = '' })
       setWord(word)
       setTag(tag)
     }
-   
-    localStorage.setItem(LSPostkey, JSON.stringify(posts))
+
+    localStorage.setItem(LSPostsKey, JSON.stringify(posts))
     closeModal()
       };
 
