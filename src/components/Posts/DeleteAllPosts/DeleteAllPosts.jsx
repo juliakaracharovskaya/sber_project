@@ -3,7 +3,7 @@ import { PostListContext } from "../../../contexts/PostListContext"
 
 
 
-const DeleteAllPost = () => {
+const DeleteAllPosts = () => {
  const {clearAllPost} = useContext(PostListContext)
 
 	const deleteAllHandler = () => clearAllPost()
@@ -14,4 +14,4 @@ const DeleteAllPost = () => {
         </footer>
     )
 }
-export default DeleteAllPost
+export default DeleteAllPosts

@@ -9,7 +9,7 @@ const PostList = () => {
 
 	return(
 		
-			<div className="row row-cols-3 mx-5 " >
+			<div className="row row-cols-1 mx-5 " >
 			 
 				{posts.length ? posts.map((post, i)=> {
 						return(

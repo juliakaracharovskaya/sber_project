@@ -1,22 +1,9 @@
-import DeleteAllPost from "./DeleteAllPost/DeleteAllPost"
-import PostInput from "./PostInput/PostInput"
-import PostList from "./PostList/PostList"
+import Posts from "../Posts/Posts"
 
-
-
-
-const Main = () => {
-
-
-
+	const Main = () => {
 
 	return (
-	<>
-	<PostInput/>
-	<hr />
-	<PostList/>
-	<DeleteAllPost />
-	</>
+		<Posts />
 	)
 	
 }

@@ -8,21 +8,23 @@ import {
   Routes,
   Route,
 } from 'react-router-dom'
-import About from "./components/About/About";
+
 import Contacts from "./components/Contacts/Contacts";
 import PageNotFound from "./components/404/404";
-import DetailPage from "./components/Main/DetailPage/DetailPage";
+import DetailPage from "./components/Posts/DetailPage/DetailPage";
+import News from "./components/News/News";
 
 
 function App() {
   return (
     <PostListProvider>
-      <div className="container py-5">
+       <div className='card d-flex align-items-center border-0 fs-3 mt-2 ' >Wellcome to travel project</div>
+      <div className="container ">
       <BrowserRouter>
         <Header />
              <Routes>
                <Route path="/" element={<Main />} />
-               <Route path="/about" element={<About />} />
+               <Route path="/news" element={<News />} />
                <Route path="/info" element={<Contacts />} />
                <Route path ="/:id" element={<DetailPage />} />
                <Route path="*" element={<PageNotFound />} />

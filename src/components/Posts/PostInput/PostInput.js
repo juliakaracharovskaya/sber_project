@@ -31,6 +31,7 @@ const PostInput = () => {
       setTags('')
     } 
   };
+  
 
   return (
     <form onSubmit={submitHandler}>
@@ -41,7 +42,7 @@ const PostInput = () => {
           className="form-control  bg-danger p-2 text-dark bg-opacity-10 m-1"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
-          placeholder="Text here topic..."
+          placeholder="Name of the country..."
           value={topic}
           onChange={changeTopic}
         />      
@@ -76,7 +77,7 @@ const PostInput = () => {
           onChange={changeTags}
         />        
       </div>
-      <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+      <div className="d-grid gap-2 d-md-flex justify-content-md-end m-1">
       <button type="submit" className="btn btn-outline-danger  ">
         Add Post
       </button>
