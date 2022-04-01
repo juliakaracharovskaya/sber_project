@@ -16,8 +16,6 @@ const usePosts = () => {
     setPosts((prev) => [...prev, newPost]);
   };
 
-
-
   const deletePost = (id) => {
     setPosts((prev) => prev.filter((post) => post.id !== id));
   };
