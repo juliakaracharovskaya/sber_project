@@ -1,11 +1,10 @@
-import { useContext, useState } from "react"
-import { PostListContext } from "../../../contexts/PostListContext"
-// import PostFilter from "../PostFilter/PostFilter"
+import {  useState } from "react"
+import { useSelector } from "react-redux"
 import PostItem from "./PostItem/PostItem"
 
 const PostList = () => {
 
-	const {posts} = useContext(PostListContext)
+	const posts = useSelector(store => store.posts)
 	const [searchInput, setSearchInput] = useState('')
 	const filterPost = posts.filter(post => {
 		return post.topic.toLowerCase().includes(searchInput.toLowerCase())
@@ -28,7 +27,6 @@ const PostList = () => {
 	  </form>
 
 			<div className="row row-cols-1 mx-5 " >
-			 	{/* <PostFilter /> */}
 				{filterPost.length ? filterPost.map((post, i)=> {
 						return( 			
 					<PostItem 

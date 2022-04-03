@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { useParams } from "react-router-dom"
 import { PostListContext } from "../../../contexts/PostListContext"
-
+import { useSelector } from "react-redux"
 
 function ModalInput({ onSubmit, topic = '', image = '', input = '', tags = '' }) {
 
@@ -11,10 +11,10 @@ function ModalInput({ onSubmit, topic = '', image = '', input = '', tags = '' })
   const [word, setWord] = useState(input)
   const [tag, setTag] = useState(tags)
  
-  const {posts} = useContext(PostListContext)
+  const posts = useSelector(store => store.posts)
+  
   const {id} = useParams()
   const { closeModal} = useContext(PostListContext)
-  const {LSPostsKey} =  useContext(PostListContext)
 
   const indexPost = posts.findIndex((post) => post.id === +id)
 
@@ -44,12 +44,9 @@ function ModalInput({ onSubmit, topic = '', image = '', input = '', tags = '' })
       setTag(tag)
     }
 
-    localStorage.setItem(LSPostsKey, JSON.stringify(posts))
-    closeModal()
+     closeModal()
       };
-
-        
-     
+   
   return (
     <form onSubmit={createSubmit}>
       <div className="mb-3 d-flex align-items-center " >

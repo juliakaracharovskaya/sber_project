@@ -1,5 +1,7 @@
-import { useContext, useState } from "react"
-import { PostListContext } from "../../../contexts/PostListContext"
+import {  useState } from "react"
+import { useDispatch } from "react-redux"
+import { createNewPost } from "../../../redux/actionCreators/postsAC"
+
 
 
 const PostInput = () => {
@@ -9,7 +11,7 @@ const PostInput = () => {
   const [input, setInput] = useState("")
   const [tags, setTags] = useState("")
 
-  const { createPost } = useContext(PostListContext)
+  const dispatch = useDispatch()
   
   const changeTopic = (e) => setTopic(e.target.value)
   const changeImage = (e) => setImage(e.target.value)
@@ -24,7 +26,7 @@ const PostInput = () => {
     const imageTrim = image.trim()
     const tagsTrim = tags.trim()
     if (inputTrim && topicTrim && imageTrim && tagsTrim) {
-      createPost(inputTrim, topicTrim, imageTrim, tagsTrim)
+      dispatch(createNewPost(topicTrim, inputTrim, imageTrim, tagsTrim))
       setTopic('')
       setImage('')
       setInput('')

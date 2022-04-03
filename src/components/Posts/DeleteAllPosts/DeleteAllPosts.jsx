@@ -1,12 +1,13 @@
-import { useContext } from "react"
-import { PostListContext } from "../../../contexts/PostListContext"
-
+import { useDispatch } from "react-redux"
+import { clearAllPosts } from "../../../redux/actionCreators/postsAC"
 
 
 const DeleteAllPosts = () => {
- const {clearAllPost} = useContext(PostListContext)
+ const dispatch = useDispatch()
 
-	const deleteAllHandler = () => clearAllPost()
+	const deleteAllHandler = () => {
+        dispatch(clearAllPosts())
+    }
 
     return(
         <footer className='d-flex mt-5 justify-content-center' >

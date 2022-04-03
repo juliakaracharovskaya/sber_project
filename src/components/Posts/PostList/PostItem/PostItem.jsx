@@ -1,13 +1,14 @@
-import { useContext } from "react"
-import { PostListContext } from "../../../../contexts/PostListContext"
+import { useDispatch } from 'react-redux'
+import { deletePost } from '../../../../redux/actionCreators/postsAC'
 const { Link } = require('react-router-dom')
 
 
 const PostItem = ({id, index, topic, image, input, tags}) => {
 
-	const { deletePost} = useContext(PostListContext)
-	const deleteHandler = () => deletePost(id)
-
+	const dispatch = useDispatch()
+	const deleteHandler = () => {
+		dispatch(deletePost(id))
+	}
 
 		return (
 	  

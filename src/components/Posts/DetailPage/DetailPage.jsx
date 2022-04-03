@@ -3,11 +3,12 @@ import { PostListContext } from "../../../contexts/PostListContext"
 import { useNavigate, useParams } from 'react-router-dom'
 import Modal from "../../Modal/Modal"
 import ModalInput from "../../Modal/ModalInput/ModalInput"
+import { useSelector } from "react-redux"
 
 
 const DetailPage = () => {
 
-    const { posts } = useContext(PostListContext)
+  const posts = useSelector(store => store.posts)
     const {id} = useParams()
  
     const navigate = useNavigate()
